@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Plan Treningowy – Wakacje 2025</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #121212; color: #e0e0e0; }
+        h1, h2, h3 { color: #f5f5f5; }
+        .day { margin-bottom: 10px; padding: 10px; background: #1e1e1e; border-radius: 5px; }
+        .completed { text-decoration: line-through; color: #888; }
+        ul { padding-left: 20px; }
+        button { margin-top: 10px; padding: 10px; background-color: #333; color: #fff; border: none; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>Plan Treningowy – Wakacje 2025</h1>
+    <p>Od 28 czerwca do 29 sierpnia</p>
+    <p><strong>Dni do końca planu: <span id="daysLeft"></span></strong></p>
+<h2>Układ tygodnia:</h2><ul><li><strong>Poniedziałek:</strong> Basen co 2 tygodnie lub piłka/nożna/rower (17:00–18:00 lub 18:00–19:00)</li><li><strong>Wtorek:</strong> Trening domowy (17:00–17:40)</li><li><strong>Środa:</strong> Mini-trening: ręce i nogi (17:00–17:30)</li><li><strong>Czwartek:</strong> Marsz/bieg na zmianę (17:00–17:30)</li><li><strong>Piątek:</strong> Trening domowy (17:00–17:40)</li><li><strong>Sobota:</strong> Dowolny sport na zewnątrz (17:00–18:00)</li><li><strong>Niedziela:</strong> Mini-trening: ręce i nogi (17:00–17:30)</li></ul><h2>Ważenie (soboty, rano na czczo):</h2><ul><li>29 czerwca</li><li>6 lipca</li><li>13 lipca</li><li>20 lipca</li><li>27 lipca</li><li>3 sierpnia</li><li>10 sierpnia</li><li>17 sierpnia</li><li>24 sierpnia</li><li>31 sierpnia</li></ul><h2>Trening domowy – zestaw ćwiczeń:</h2><ul><li>15 przysiadów</li><li>5–10 pompek</li><li>20 sekund deski (plank)</li><li>10 wykroków (po 5 na nogę)</li><li>15 pajacyków</li><li>10 brzuszków</li><li>30 sekund biegu w miejscu</li><li>2–3 rundy całości</li></ul>
+<h2>Mini-trening na ręce i nogi (środa i niedziela): (17:00–17:30)</h2>
+<h3>🔸 Rozgrzewka (2–3 minuty):</h3>
+<ul>
+<li>Pajacyki – 30 sek</li>
+<li>Krążenia ramion (do przodu i do tyłu) – 2×20 sek</li>
+<li>Wymachy nóg w przód/w bok – 2×20 sek</li>
+</ul>
+<h3>🔸 Ręce i klatka:</h3>
+<ul>
+<li>Pompki (można na kolanach) – 2–3 serie, 6–12 powtórzeń</li>
+<li>Dip-y na krześle (na triceps) – 2 serie, 10–15 powtórzeń</li>
+<li>Plank (deska) – 2 serie, 30–45 sekund</li>
+<li>Krążenia ramion (ręce proste w bok) – 2 serie, 30 sekund</li>
+</ul>
+<h3>🔸 Nogi i pośladki:</h3>
+<ul>
+<li>Przysiady klasyczne – 2–3 serie, 15–20 powtórzeń</li>
+<li>Wykroki (w miejscu lub chodzone) – 2 serie, po 10 na każdą nogę</li>
+<li>Mostek biodrowy (glute bridge) – 2 serie, 15–20 powtórzeń</li>
+<li>Wspinaczka górska (mountain climbers) – 2 serie, 30 sekund</li>
+</ul>
+<h3>🔸 Rozciąganie (2–3 minuty):</h3>
+<ul>
+<li>Rozciąganie nóg – dotykanie palców u stóp (20–30 sek)</li>
+<li>Rozciąganie ramion – ręka za plecy (20–30 sek)</li>
+<li>Koci grzbiet – pozycja na czworakach (20–30 sek)</li>
+</ul>
+
+<h2>Poniedziałki – szczegółowa rozpiska:</h2>
+<ul>
+<li>01.07.2024 – Basen (60 minut, darmowy) (18:00–19:00)</li>
+<li>08.07.2024 – Piłka nożna, rower lub gra (60 minut) (17:00–18:00)</li>
+<li>15.07.2024 – Basen (60 minut, darmowy) (18:00–19:00)</li>
+<li>22.07.2024 – Piłka nożna, rower lub gra (60 minut) (17:00–18:00)</li>
+<li>29.07.2024 – Basen (60 minut, darmowy) (18:00–19:00)</li>
+<li>05.08.2024 – Piłka nożna, rower lub gra (60 minut) (17:00–18:00)</li>
+<li>12.08.2024 – Basen (60 minut, darmowy) (18:00–19:00)</li>
+<li>19.08.2024 – Piłka nożna, rower lub gra (60 minut) (17:00–18:00)</li>
+<li>26.08.2024 – Basen (60 minut, darmowy) (18:00–19:00)</li>
+</ul>
+<div id="plan">
+    <div class="day" id="day0">
+        <input type="checkbox" onchange="updateProgress()" id="check0">
+        <label for="check0">
+            <strong>28.06.2025 (Sobota):</strong> Dowolny sport (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day1">
+        <input type="checkbox" onchange="updateProgress()" id="check1">
+        <label for="check1">
+            <strong>29.06.2025 (Niedziela):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day2">
+        <input type="checkbox" onchange="updateProgress()" id="check2">
+        <label for="check2">
+            <strong>30.06.2025 (Poniedziałek):</strong> Piłka nożna / rower / gra (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day3">
+        <input type="checkbox" onchange="updateProgress()" id="check3">
+        <label for="check3">
+            <strong>01.07.2025 (Wtorek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day4">
+        <input type="checkbox" onchange="updateProgress()" id="check4">
+        <label for="check4">
+            <strong>02.07.2025 (Środa):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day5">
+        <input type="checkbox" onchange="updateProgress()" id="check5">
+        <label for="check5">
+            <strong>03.07.2025 (Czwartek):</strong> Marsz/bieg na zmianę (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day6">
+        <input type="checkbox" onchange="updateProgress()" id="check6">
+        <label for="check6">
+            <strong>04.07.2025 (Piątek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day7">
+        <input type="checkbox" onchange="updateProgress()" id="check7">
+        <label for="check7">
+            <strong>05.07.2025 (Sobota):</strong> Dowolny sport (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day8">
+        <input type="checkbox" onchange="updateProgress()" id="check8">
+        <label for="check8">
+            <strong>06.07.2025 (Niedziela):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day9">
+        <input type="checkbox" onchange="updateProgress()" id="check9">
+        <label for="check9">
+            <strong>07.07.2025 (Poniedziałek):</strong> Basen (18:00–19:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day10">
+        <input type="checkbox" onchange="updateProgress()" id="check10">
+        <label for="check10">
+            <strong>08.07.2025 (Wtorek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day11">
+        <input type="checkbox" onchange="updateProgress()" id="check11">
+        <label for="check11">
+            <strong>09.07.2025 (Środa):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day12">
+        <input type="checkbox" onchange="updateProgress()" id="check12">
+        <label for="check12">
+            <strong>10.07.2025 (Czwartek):</strong> Marsz/bieg na zmianę (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day13">
+        <input type="checkbox" onchange="updateProgress()" id="check13">
+        <label for="check13">
+            <strong>11.07.2025 (Piątek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day14">
+        <input type="checkbox" onchange="updateProgress()" id="check14">
+        <label for="check14">
+            <strong>12.07.2025 (Sobota):</strong> Dowolny sport (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day15">
+        <input type="checkbox" onchange="updateProgress()" id="check15">
+        <label for="check15">
+            <strong>13.07.2025 (Niedziela):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day16">
+        <input type="checkbox" onchange="updateProgress()" id="check16">
+        <label for="check16">
+            <strong>14.07.2025 (Poniedziałek):</strong> Piłka nożna / rower / gra (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day17">
+        <input type="checkbox" onchange="updateProgress()" id="check17">
+        <label for="check17">
+            <strong>15.07.2025 (Wtorek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day18">
+        <input type="checkbox" onchange="updateProgress()" id="check18">
+        <label for="check18">
+            <strong>16.07.2025 (Środa):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day19">
+        <input type="checkbox" onchange="updateProgress()" id="check19">
+        <label for="check19">
+            <strong>17.07.2025 (Czwartek):</strong> Marsz/bieg na zmianę (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day20">
+        <input type="checkbox" onchange="updateProgress()" id="check20">
+        <label for="check20">
+            <strong>18.07.2025 (Piątek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day21">
+        <input type="checkbox" onchange="updateProgress()" id="check21">
+        <label for="check21">
+            <strong>19.07.2025 (Sobota):</strong> Dowolny sport (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day22">
+        <input type="checkbox" onchange="updateProgress()" id="check22">
+        <label for="check22">
+            <strong>20.07.2025 (Niedziela):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day23">
+        <input type="checkbox" onchange="updateProgress()" id="check23">
+        <label for="check23">
+            <strong>21.07.2025 (Poniedziałek):</strong> Basen (18:00–19:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day24">
+        <input type="checkbox" onchange="updateProgress()" id="check24">
+        <label for="check24">
+            <strong>22.07.2025 (Wtorek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day25">
+        <input type="checkbox" onchange="updateProgress()" id="check25">
+        <label for="check25">
+            <strong>23.07.2025 (Środa):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day26">
+        <input type="checkbox" onchange="updateProgress()" id="check26">
+        <label for="check26">
+            <strong>24.07.2025 (Czwartek):</strong> Marsz/bieg na zmianę (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day27">
+        <input type="checkbox" onchange="updateProgress()" id="check27">
+        <label for="check27">
+            <strong>25.07.2025 (Piątek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day28">
+        <input type="checkbox" onchange="updateProgress()" id="check28">
+        <label for="check28">
+            <strong>26.07.2025 (Sobota):</strong> Dowolny sport (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day29">
+        <input type="checkbox" onchange="updateProgress()" id="check29">
+        <label for="check29">
+            <strong>27.07.2025 (Niedziela):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day30">
+        <input type="checkbox" onchange="updateProgress()" id="check30">
+        <label for="check30">
+            <strong>28.07.2025 (Poniedziałek):</strong> Piłka nożna / rower / gra (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day31">
+        <input type="checkbox" onchange="updateProgress()" id="check31">
+        <label for="check31">
+            <strong>29.07.2025 (Wtorek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day32">
+        <input type="checkbox" onchange="updateProgress()" id="check32">
+        <label for="check32">
+            <strong>30.07.2025 (Środa):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day33">
+        <input type="checkbox" onchange="updateProgress()" id="check33">
+        <label for="check33">
+            <strong>31.07.2025 (Czwartek):</strong> Marsz/bieg na zmianę (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day34">
+        <input type="checkbox" onchange="updateProgress()" id="check34">
+        <label for="check34">
+            <strong>01.08.2025 (Piątek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day35">
+        <input type="checkbox" onchange="updateProgress()" id="check35">
+        <label for="check35">
+            <strong>02.08.2025 (Sobota):</strong> Dowolny sport (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day36">
+        <input type="checkbox" onchange="updateProgress()" id="check36">
+        <label for="check36">
+            <strong>03.08.2025 (Niedziela):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day37">
+        <input type="checkbox" onchange="updateProgress()" id="check37">
+        <label for="check37">
+            <strong>04.08.2025 (Poniedziałek):</strong> Basen (18:00–19:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day38">
+        <input type="checkbox" onchange="updateProgress()" id="check38">
+        <label for="check38">
+            <strong>05.08.2025 (Wtorek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day39">
+        <input type="checkbox" onchange="updateProgress()" id="check39">
+        <label for="check39">
+            <strong>06.08.2025 (Środa):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day40">
+        <input type="checkbox" onchange="updateProgress()" id="check40">
+        <label for="check40">
+            <strong>07.08.2025 (Czwartek):</strong> Marsz/bieg na zmianę (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day41">
+        <input type="checkbox" onchange="updateProgress()" id="check41">
+        <label for="check41">
+            <strong>08.08.2025 (Piątek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day42">
+        <input type="checkbox" onchange="updateProgress()" id="check42">
+        <label for="check42">
+            <strong>09.08.2025 (Sobota):</strong> Dowolny sport (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day43">
+        <input type="checkbox" onchange="updateProgress()" id="check43">
+        <label for="check43">
+            <strong>10.08.2025 (Niedziela):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day44">
+        <input type="checkbox" onchange="updateProgress()" id="check44">
+        <label for="check44">
+            <strong>11.08.2025 (Poniedziałek):</strong> Piłka nożna / rower / gra (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day45">
+        <input type="checkbox" onchange="updateProgress()" id="check45">
+        <label for="check45">
+            <strong>12.08.2025 (Wtorek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day46">
+        <input type="checkbox" onchange="updateProgress()" id="check46">
+        <label for="check46">
+            <strong>13.08.2025 (Środa):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day47">
+        <input type="checkbox" onchange="updateProgress()" id="check47">
+        <label for="check47">
+            <strong>14.08.2025 (Czwartek):</strong> Marsz/bieg na zmianę (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day48">
+        <input type="checkbox" onchange="updateProgress()" id="check48">
+        <label for="check48">
+            <strong>15.08.2025 (Piątek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day49">
+        <input type="checkbox" onchange="updateProgress()" id="check49">
+        <label for="check49">
+            <strong>16.08.2025 (Sobota):</strong> Dowolny sport (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day50">
+        <input type="checkbox" onchange="updateProgress()" id="check50">
+        <label for="check50">
+            <strong>17.08.2025 (Niedziela):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day51">
+        <input type="checkbox" onchange="updateProgress()" id="check51">
+        <label for="check51">
+            <strong>18.08.2025 (Poniedziałek):</strong> Basen (18:00–19:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day52">
+        <input type="checkbox" onchange="updateProgress()" id="check52">
+        <label for="check52">
+            <strong>19.08.2025 (Wtorek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day53">
+        <input type="checkbox" onchange="updateProgress()" id="check53">
+        <label for="check53">
+            <strong>20.08.2025 (Środa):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day54">
+        <input type="checkbox" onchange="updateProgress()" id="check54">
+        <label for="check54">
+            <strong>21.08.2025 (Czwartek):</strong> Marsz/bieg na zmianę (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day55">
+        <input type="checkbox" onchange="updateProgress()" id="check55">
+        <label for="check55">
+            <strong>22.08.2025 (Piątek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day56">
+        <input type="checkbox" onchange="updateProgress()" id="check56">
+        <label for="check56">
+            <strong>23.08.2025 (Sobota):</strong> Dowolny sport (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day57">
+        <input type="checkbox" onchange="updateProgress()" id="check57">
+        <label for="check57">
+            <strong>24.08.2025 (Niedziela):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day58">
+        <input type="checkbox" onchange="updateProgress()" id="check58">
+        <label for="check58">
+            <strong>25.08.2025 (Poniedziałek):</strong> Piłka nożna / rower / gra (17:00–18:00) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day59">
+        <input type="checkbox" onchange="updateProgress()" id="check59">
+        <label for="check59">
+            <strong>26.08.2025 (Wtorek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day60">
+        <input type="checkbox" onchange="updateProgress()" id="check60">
+        <label for="check60">
+            <strong>27.08.2025 (Środa):</strong> Mini-trening: ręce i nogi (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day61">
+        <input type="checkbox" onchange="updateProgress()" id="check61">
+        <label for="check61">
+            <strong>28.08.2025 (Czwartek):</strong> Marsz/bieg na zmianę (17:00–17:30) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    <div class="day" id="day62">
+        <input type="checkbox" onchange="updateProgress()" id="check62">
+        <label for="check62">
+            <strong>29.08.2025 (Piątek):</strong> Trening domowy (17:00–17:40) + Mini-trening: ręce i nogi (po głównym)
+        </label>
+    </div>
+    
+    </div>
+    <p><strong>Postęp: <span id="progress">0%</span></strong></p>
+    <button onclick="resetAll()">Resetuj postęp</button>
+    <script>
+        function updateProgress() {
+            const total = 63;
+            let completed = 0;
+            for (let j = 0; j < total; j++) {
+                if (document.getElementById("check" + j).checked) {
+                    completed++;
+                    document.getElementById("day" + j).classList.add("completed");
+                } else {
+                    document.getElementById("day" + j).classList.remove("completed");
+                }
+            }
+            const percent = Math.round((completed / total) * 100);
+            document.getElementById("progress").innerText = percent + "%";
+        }
+
+        function resetAll() {
+            const total = 63;
+            for (let j = 0; j < total; j++) {
+                document.getElementById("check" + j).checked = false;
+                document.getElementById("day" + j).classList.remove("completed");
+            }
+            updateProgress();
+        }
+
+        function updateDaysLeft() {
+            const today = new Date();
+            const end = new Date(2025, 7, 29);
+            const diff = Math.ceil((end - today) / (1000 * 60 * 60 * 24));
+            document.getElementById("daysLeft").innerText = diff > 0 ? diff : "Plan zakończony";
+        }
+
+        updateProgress();
+        updateDaysLeft();
+    </script>
+</body>
+</html>
